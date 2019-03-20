@@ -27,12 +27,13 @@ function exitCb () {
 
 
 test('docker runner test', function (t) {
-  t.plan(5)
+  t.plan(6)
 
   var runner = dockerRunner()
 
   config.load(path.join(__dirname, 'fixture', 'system', 'fuge', 'containers.yml'), function (err, system) {
     t.equal(err, null)
+    t.equal(system.topology.containers.wibble.environment.FOO, "BAR");
     runner.start(system, 'live', system.topology.containers.wibble, exitCb, function (err, child) {
       t.equal(null, err)
       t.notEqual(undefined, child.pid)
