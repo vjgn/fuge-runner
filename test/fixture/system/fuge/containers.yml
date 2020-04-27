@@ -11,6 +11,8 @@ wibble:
   type: container
   image: wibble
   args: ''
+  environment:
+    - "FOO=BAR"
   ports:
     - main=27017:27017
 fish:
