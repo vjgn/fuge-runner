@@ -23,3 +23,5 @@ app/bower_components
 options.mine.js
 db/
 data/
+.tap/
+
